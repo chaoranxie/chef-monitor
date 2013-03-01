@@ -20,6 +20,12 @@
 include_recipe "sensu::rabbitmq"
 include_recipe "sensu::redis"
 
+
+service "redis" do
+  action :start
+end
+
+
 include_recipe "monitor::_worker"
 
 include_recipe "sensu::api_service"
